@@ -7,7 +7,7 @@ last_index=""
 for file in KSAufgabePHSW*
 do 
     number=$(echo $file | grep -o '[[:digit:]]*')
-    if (( $number >= 5 ))
+    if (( $(echo $number | sed 's/^0*//') >= 5 ))
     then        
         if [ "$last_index" != "$number" ]
         then        
